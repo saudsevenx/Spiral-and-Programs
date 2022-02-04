@@ -1,5 +1,5 @@
 public class Spiral {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
 
     //Set n accordingly
         int n = 5;
