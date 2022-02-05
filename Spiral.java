@@ -5,50 +5,49 @@ public class Spiral {
         int n = 5;
         
         int count = 1;
-        int rowend = n - 1;
-        int colend = n - 1;
-        int rowstart = 0;
-        int colstart = 0;
+        int rowEnd = n - 1;
+        int colEnd = n - 1;
+        int rowStart = 0;
+        int colStart = 0;
     
     //2D nxn zero matrix
-        int[][] arr = new int[n][n];
+        int[][] matrix = new int[n][n];
 
-    
-        while(rowstart<=rowend && colstart <= colend){
+        while(rowStart<=rowEnd && colStart <= colEnd){
 
             //print first row
-            for(int i = colstart; i <= colend; i++){
-                arr[rowstart][i] = count;
+            for(int i = colStart; i <= colEnd; i++){
+                matrix[rowStart][i] = count;
                 count ++ ;
             }
-            rowstart ++ ;
+            rowStart ++ ;
             
             //print last coloumn
-            for(int i = rowstart; i <= rowend; i++){
-                arr[i][colend] = count;
+            for(int i = rowStart; i <= rowEnd; i++){
+                matrix[i][colEnd] = count;
                 count ++ ;
             }
-            colend -- ;
+         colEnd -- ;
 
             //print last row
-            for(int i = colend; i >= colstart; i--){
-                arr[rowend][i] = count;
+            for(int i = colEnd; i >= colStart; i--){
+                matrix[rowEnd][i] = count;
                 count ++ ;
             }
-            rowend -- ;
+            rowEnd -- ;
 
             //print first coloumn
-            for(int i = rowend; i >= rowstart; i--){
-                arr[i][colstart] = count;
+            for(int i = rowEnd; i >= rowStart; i--){
+                matrix[i][colStart] = count;
                 count ++ ;
             }
-            colstart ++ ;
+            colStart ++ ;
         }
 
         //display 2D array
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-                System.out.print(arr[i][j]);
+                System.out.print(matrix[i][j]);
                 System.out.print(" ");
             }
             System.out.println("");
